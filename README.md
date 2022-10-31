@@ -1,1 +1,1 @@
-# otusHW2
+# Otus Java Basic HomeWork
