@@ -22,7 +22,7 @@ public class QuizMenu {
             int choice = scan.nextInt();
             switch (choice) {
                 case 1 -> quiz.startQuiz();
-                case 2 -> quiz.getQuestions();
+                case 2 -> quiz.printQuestions();
                 case 3 -> exit = true;
                 default -> System.out.println("Введено некорректное значение");
             }
