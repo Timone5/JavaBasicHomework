@@ -7,12 +7,13 @@ import java.util.List;
 
 public class SortingAlgorithms {
     private final List<Integer> list = new ArrayList<>();
+    private final List<Integer> list2;
     private final int size;
 
     public SortingAlgorithms(int size) {
         this.size = size;
         arrayInit(this.list);
-
+        this.list2 = new ArrayList<>(this.list);
     }
 
     private void arrayInit(List<Integer> array) {
@@ -22,7 +23,17 @@ public class SortingAlgorithms {
         }
     }
 
+    public List<Integer> getList() {
+        return list;
+    }
+
+    public List<Integer> getList2() {
+        return list2;
+    }
+
     public void bubbleSort() {
+        System.out.println("Before Bubble sort: ");
+        printArrayList();
         Date startDate = new Date();
         for (int j = 0; j < list.size() - 1; j++) {
             for (int i = 0; i < list.size() - 1 - j; i++) {
@@ -39,16 +50,24 @@ public class SortingAlgorithms {
         System.out.println("Bubble sorting algorithm: " + (endDate.getTime() - startDate.getTime()) + " ms");
     }
 
+
     public void defaultSort() {
+        System.out.println("Before Default sort: ");
+        printArrayList2();
         Date startDate = new Date();
-        Collections.sort(list);
+        Collections.sort(list2);
         Date endDate = new Date();
         System.out.println("After Default sort: ");
-        printArrayList();
+        printArrayList2();
         System.out.println("Default sorting algorithm: " + (endDate.getTime() - startDate.getTime()) + " ms");
     }
 
     public void printArrayList() {
-        System.out.println(this.list);
+        System.out.println(getList());
     }
+
+    public void printArrayList2() {
+        System.out.println(getList2());
+    }
+
 }
