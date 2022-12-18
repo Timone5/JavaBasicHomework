@@ -1,0 +1,45 @@
+        form{
+            border: 1px solid steelblue;
+            width: 650px;
+            border-collapse: collapse;
+        }
+        label{
+                    width: 250px;
+                    display: inline-block;
+                    margin: 5px;
+        		}
+                .fullName{
+                    border: 1px solid steelblue;
+                    width: 248px;
+                    }
+                .birthDate{
+                    border: 1px solid steelblue;
+                    width: 251px;
+                }
+                .gender{
+                    border: 1px solid steelblue;
+                    width: 254px;
+                        }
+                .button{
+                    margin-top: 5px;
+                    width:70px;
+                }
+        .students-tab {
+            width: 700px;
+            border-collapse: collapse;
+        }
+        .students-tab tr td {
+            border: 1px solid steelblue;
+        }
+        .students-tab-col1 {
+            width: 300px;
+        }
+        .students-tab-col2 {
+            width: 120px;
+        }
+        .students-tab-col3 {
+            width: 150px;
+        }
+        .students-tab-col4 {
+            width: 90px;
+        }
