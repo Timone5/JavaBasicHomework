@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW10</title>
+    <link rel="stylesheet" href="styleHW10.css">
+    <script>
+    function addText(){
+        const studentsTable = document.getElementById("studentsTable");
+        const tr = document.createElement("tr");
+        const fullName = document.getElementById("fullNameTextBox");
+		const gender = document.getElementById("gender");
+        const dateBirth = document.getElementById("birthDate");
+        const age = Math.round((new Date() - new Date(dateBirth.value)) / 1000 / 60 / 60 / 24 / 365);
+        tr.innerHTML = "<td>" + fullName.value + "</td><td>" + gender.value +"</td><td>" + dateBirth.value + "</td><td>"+ age +"</td>";
+        studentsTable.appendChild(tr);
+        n += 1;
+        sum += age;
+        avg = Math.round(sum/n);
+        avgElement.innerText = avg;
+    }
+    </script>
+</head>
+<body>
+<h3>Форма добавления информации о студенте</h3>
+<div id="form">
+    <form>
+        <div>
+            <label for="fullNameTextBox">Имя студента:</label>
+            <input class="fullName" id="fullNameTextBox" name="fullName" type="text">
+        </div>
+        <div>
+            <label for="birthDate">Дата рождения:</label>
+            <input class="birthDate" id="birthDate" name="birthDate" type="date" value="01.01.2022">
+        </div>
+        <div>
+            <label for="gender"> Пол:</label>
+            <select class="gender" id="gender" name="gender">
+                <option value="мужчина" selected>мужчина</option>
+                <option value="женщина">женщина</option>
+            </select>
+        </div>
+        <div>
+            <button class="button" onclick=addText() type=button>
+                Добавить
+            </button>
+        </div>
+    </form>
+</div>
+<h3>Таблица студентов</h3>
+<table class="students-tab" id="studentsTab">
+    <thead>
+    <tr>
+        <td class="students-tab-col1">Имя студента</td>
+        <td class="students-tab-col2">Пол</td>
+        <td class="students-tab-col3">Дата рождения</td>
+        <td class="students-tab-col4">Возраст</td>
+    </tr>
+    </thead>
+    <tbody id="studentsTable">
+    <tr>
+        <td>Иван Ограномович Штейн</td>
+        <td>мужчина</td>
+        <td>12.06.1974</td>
+        <td>46</td>
+    </tr>
+    <tr>
+        <td>Гертруда Анатольевна Иванова</td>
+        <td>женщина</td>
+        <td>01.01.1987</td>
+        <td>34</td>
+    </tr>
+    <tr>
+        <td>Воланд Игоревич Муха</td>
+        <td>мужчина</td>
+        <td>27.04.1974</td>
+        <td>47</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="3">Средний возраст студентов</td>
+        <td id="avg">42</td>
+    </tr>
+    </tfoot>
+</table>
+<script>
+    const avgElement = document.getElementById("avg");
+    let sum = 127;
+    let n = 3;
+</script>
+</body>
+</html>
