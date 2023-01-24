@@ -8,7 +8,7 @@ public class GameTest2EqualPlayerNames {
         String scenario = "Test for equal player names";
         try {
             Player player = new Player("Tim");
-            Player player1 = new Player("Tim");
+            Player player1 = new Player("Peter");
             Assertions.assertEquals(player.toString(), player1.toString());
             System.out.printf("\"%s\" passed.%n", scenario);
         } catch (AssertionError e) {

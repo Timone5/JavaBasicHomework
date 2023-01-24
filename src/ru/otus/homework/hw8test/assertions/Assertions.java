@@ -40,4 +40,5 @@ public class Assertions {
             throw new AssertionError(String.format("Expected \"%s\" = \"%s\"", expected.getSimpleName(), actual.getClass().getSimpleName()));
         }
     }
+
 }

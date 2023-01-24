@@ -6,6 +6,6 @@ public class DiceImpl implements Dice {
     @Override
     public int roll() {
         // https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
-        return new Random().nextInt(6) + 1;
+        return new Random().nextInt();
     }
 }

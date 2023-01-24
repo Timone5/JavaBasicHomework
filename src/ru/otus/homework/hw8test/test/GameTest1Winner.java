@@ -18,8 +18,7 @@ public class GameTest1Winner {
 
     public void winnerTest(Player exceptedWinner) {
         String scenario = "Test for a winner";
-        //Player winner = (this.diceResult > this.diceResult1) ? this.player : this.player1;
-        Player winner = (this.diceResult == diceResult1) ? null : (this.diceResult > this.diceResult1) ? this.player : this.player1;
+        Player winner = (diceResult > diceResult1) ? player : player1;
         try {
             assert winner != null;
             Assertions.assertEquals(exceptedWinner.getName(), winner.getName());
