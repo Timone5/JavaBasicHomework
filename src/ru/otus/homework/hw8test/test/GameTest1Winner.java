@@ -1,28 +1,20 @@
 package ru.otus.homework.hw8test.test;
 
 import ru.otus.homework.hw8test.assertions.Assertions;
+import ru.otus.homework.hw8test.game.Game;
 import ru.otus.homework.hw8test.game.Player;
 
 public class GameTest1Winner {
-    private final Player player;
-    private final Player player1;
-    private final int diceResult;
-    private final int diceResult1;
-
-    public GameTest1Winner(Player player, Player player1, int diceResult, int diceResult1) {
-        this.player = player;
-        this.player1 = player1;
-        this.diceResult = diceResult;
-        this.diceResult1 = diceResult1;
-    }
-
-    public void winnerTest(Player exceptedWinner) {
+    public void winnerTest() {
         String scenario = "Test for a winner";
-        Player winner = (diceResult > diceResult1) ? player : player1;
         try {
-            assert winner != null;
-            Assertions.assertEquals(exceptedWinner.getName(), winner.getName());
-            System.out.printf("\"%s\" passed. %s scored %d and %s scored %d.\n", scenario, player, diceResult, player1, diceResult1);
+            GameWinnerConsolePrinterStub winnerPrinter = new GameWinnerConsolePrinterStub();
+            Game game = new Game(new DiceImplMock(), winnerPrinter);
+            Player player = new Player("Tim");
+            Player player1 = new Player("Peter");
+            game.playGame(player, player1);
+            Assertions.assertEquals(player, winnerPrinter.getWinner());
+            System.out.printf("\"%s\" passed.\n", scenario);
         } catch (AssertionError e) {
             System.err.printf("\"%s\" fails with message \"%s\" %n.", scenario, e.getMessage());
         }

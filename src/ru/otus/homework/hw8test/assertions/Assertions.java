@@ -1,5 +1,7 @@
 package ru.otus.homework.hw8test.assertions;
 
+import ru.otus.homework.hw8test.game.Player;
+
 public class Assertions {
     public static void assertEquals(int expected, int actual) {
         if (expected != actual) {
@@ -41,4 +43,12 @@ public class Assertions {
         }
     }
 
+    public static void assertDraw(String draw, Player winner) {
+    }
+
+    public static void assertEquals(Player expected, Player actual) {
+        if (expected != actual) {
+            throw new AssertionError(String.format("Expected \"%s\" = \"%s\"", expected.toString(), actual.toString()));
+        }
+    }
 }
