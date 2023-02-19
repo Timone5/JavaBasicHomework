@@ -1,6 +1,6 @@
 package ru.otus.homework.finalproject;
 
-public class GBP implements SelectCurrency {
+public class GBPSelectCurrency implements SelectCurrency {
     @Override
     public String getCurrency(long number) {
         if (number == 1) return "фунт стерлингов";

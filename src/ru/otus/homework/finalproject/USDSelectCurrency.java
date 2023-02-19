@@ -1,6 +1,6 @@
 package ru.otus.homework.finalproject;
 
-public class USD implements SelectCurrency {
+public class USDSelectCurrency implements SelectCurrency {
     @Override
     public String getCurrency(long number) {
         if (number == 1)

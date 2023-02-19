@@ -2,7 +2,7 @@ package ru.otus.homework.finalproject;
 
 import java.util.Scanner;
 
-public class Converter {
+public class CurrencyConverter {
     public static String convertNumber(Currency currency, long number) {
         return getString(currency, number);
     }
@@ -16,10 +16,10 @@ public class Converter {
 
     private static String getString(Currency currency, long number) {
         SelectCurrency currencySelect = switch (currency) {
-            case RUB -> new RUB();
-            case USD -> new USD();
-            case GBP -> new GBP();
-            case BTC -> new BTC();
+            case RUB -> new RUBSelectCurrency();
+            case USD -> new USDSelectCurrency();
+            case GBP -> new GBPSelectCurrency();
+            case BTC -> new BTCSelectCurrency();
         };
         return (number + " " + currencySelect.getCurrency(number));
     }
